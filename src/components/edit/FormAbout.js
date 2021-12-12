@@ -8,17 +8,22 @@ class FormAbout extends React.Component {
   render() {
     let info = this.props.info;
     let handleChange = this.props.handleChange;
+    console.log(info);
     return (
       <div>
         <label>
           Name
-          <input name="name" value={info.name} onChange={handleChange}></input>
+          <input
+            name="name"
+            value={info.aboutInfo.name}
+            onChange={handleChange}
+          ></input>
         </label>
         <label>
           Title
           <input
             name="title"
-            value={info.title}
+            value={info.aboutInfo.title}
             onChange={handleChange}
           ></input>
         </label>
@@ -26,7 +31,7 @@ class FormAbout extends React.Component {
           Phone
           <input
             name="phone"
-            value={info.contact.phone}
+            value={info.aboutInfo.contact.phone}
             onChange={handleChange}
           ></input>
         </label>
@@ -34,7 +39,7 @@ class FormAbout extends React.Component {
           Email
           <input
             name="email"
-            value={info.contact.email}
+            value={info.aboutInfo.contact.email}
             onChange={handleChange}
           ></input>
         </label>
@@ -42,7 +47,7 @@ class FormAbout extends React.Component {
           Location
           <input
             name="location"
-            value={info.contact.location}
+            value={info.aboutInfo.contact.location}
             onChange={handleChange}
           ></input>
         </label>

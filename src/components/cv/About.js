@@ -1,6 +1,4 @@
 import React from 'react';
-import DisplayAbout from './about/displayAbout';
-import FormAbout from './about/FormAbout';
 
 class About extends React.Component {
   constructor(props) {
@@ -9,15 +7,13 @@ class About extends React.Component {
 
   render() {
     let info = this.props.info;
-    let handleChange = this.props.handleChange;
-    let edit = this.props.edit;
     return (
       <div>
-        {edit ? (
-          <FormAbout info={info} handleChange={handleChange} />
-        ) : (
-          <DisplayAbout info={info} />
-        )}
+        <div>{info.name}</div>
+        <div>{info.title}</div>
+        <div>{info.contact.phone}</div>
+        <div>{info.contact.email}</div>
+        <div>{info.contact.location}</div>
       </div>
     );
   }
