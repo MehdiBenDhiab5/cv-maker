@@ -8,7 +8,7 @@ class Cv extends React.Component {
     super(props);
 
     this.state = {
-      editMode: true,
+      editMode: false,
       aboutInfo: {
         name: 'a',
         title: 'b',
@@ -23,6 +23,7 @@ class Cv extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   handleInputChange(event) {
@@ -57,9 +58,20 @@ class Cv extends React.Component {
     );
   }
 
+  toggleEdit() {
+    this.setState((prevState) => {
+      return {
+        editMode: !prevState.editMode,
+      };
+    });
+  }
+
   render() {
     return (
       <div>
+        <button onClick={this.toggleEdit}>
+          {this.state.editMode ? 'Preview' : 'Edit'}
+        </button>
         <form>
           <About
             info={this.state.aboutInfo}
