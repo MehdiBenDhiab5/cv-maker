@@ -1,6 +1,7 @@
 import React from 'react';
 import Cv from './components/Cv';
 import Edit from './components/Edit';
+import uniqid from 'uniqid';
 import './styles.css';
 
 class App extends React.Component {
@@ -9,7 +10,7 @@ class App extends React.Component {
 
     this.state = {
       aboutInfo: {
-        name: 'a',
+        name: 'el bor3i',
         title: 'b',
         contact: {
           phone: 'c',
@@ -17,8 +18,43 @@ class App extends React.Component {
           location: 'e',
         },
       },
-      educationInfo: [],
-      experienceInfo: [],
+      educationInfo: [
+        {
+          id: uniqid(),
+          title: 'title1',
+          university: 'university1',
+          date: 'date1',
+        },
+        {
+          id: uniqid(),
+          title: 'title2',
+          university: 'university2',
+          date: 'date2',
+        },
+      ],
+      experienceInfo: [
+        {
+          id: uniqid(),
+          title: 'title1',
+          company: 'company1',
+          date: 'date1',
+          description: 'description1',
+        },
+        {
+          id: uniqid(),
+          title: 'title2',
+          company: 'company2',
+          date: 'date2',
+          description: 'description2',
+        },
+        {
+          id: uniqid(),
+          title: 'title3',
+          company: 'company3',
+          date: 'date3',
+          description: 'description3',
+        },
+      ],
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);

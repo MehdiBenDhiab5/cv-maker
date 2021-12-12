@@ -6,7 +6,23 @@ class Experience extends React.Component {
   }
 
   render() {
-    return <div>Experience</div>;
+    let info = this.props.info;
+    return (
+      <div>
+        <h2>Experience:</h2>
+        {info.map((x) => {
+          return (
+            <div key={x.id}>
+              <a>{x.title}; </a>
+              <a>{x.company}; </a>
+              <a>{x.date}; </a>
+              <a>{x.description}; </a>
+              <br></br>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
