@@ -6,6 +6,33 @@ import Experience from './Experience';
 class Cv extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      editMode: false,
+      aboutInfo: {
+        name: '',
+        title: '',
+        contact: {
+          phone: '',
+          email: '',
+          location: '',
+        },
+      },
+      educationInfo: [],
+      experienceInfo: [],
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
