@@ -7,7 +7,47 @@ class FormAbout extends React.Component {
 
   render() {
     let info = this.props.info;
-    return <div>form</div>;
+    let handleChange = this.props.handleChange;
+    return (
+      <div>
+        <label>
+          Name
+          <input name="name" value={info.name} onChange={handleChange}></input>
+        </label>
+        <label>
+          Title
+          <input
+            name="title"
+            value={info.title}
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Phone
+          <input
+            name="phone"
+            value={info.contact.phone}
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Email
+          <input
+            name="email"
+            value={info.contact.email}
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Location
+          <input
+            name="location"
+            value={info.contact.location}
+            onChange={handleChange}
+          ></input>
+        </label>
+      </div>
+    );
   }
 }
 

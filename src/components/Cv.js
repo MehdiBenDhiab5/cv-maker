@@ -8,7 +8,7 @@ class Cv extends React.Component {
     super(props);
 
     this.state = {
-      editMode: false,
+      editMode: true,
       aboutInfo: {
         name: 'a',
         title: 'b',
@@ -27,12 +27,34 @@ class Cv extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.value;
     const name = target.name;
+    const value = target.value;
 
-    this.setState({
-      [name]: value,
-    });
+    this.setState(
+      (prevState) => {
+        if (prevState.aboutInfo.hasOwnProperty(name)) {
+          return {
+            aboutInfo: {
+              ...prevState.aboutInfo,
+              [name]: value,
+            },
+          };
+        } else if (prevState.aboutInfo.contact.hasOwnProperty(name)) {
+          return {
+            aboutInfo: {
+              ...prevState.aboutInfo,
+              contact: {
+                ...prevState.aboutInfo.contact,
+                [name]: value,
+              },
+            },
+          };
+        }
+      },
+      () => {
+        console.log(this.state.aboutInfo);
+      }
+    );
   }
 
   render() {
