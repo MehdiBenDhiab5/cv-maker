@@ -1,5 +1,7 @@
 import React from 'react';
 import FormAbout from './edit/FormAbout';
+import FormEducation from './edit/FormEducation';
+import FormExperience from './edit/FormExperience';
 
 class Edit extends React.Component {
   constructor(props) {
@@ -12,6 +14,8 @@ class Edit extends React.Component {
     return (
       <div>
         <FormAbout info={info} handleChange={handleChange} />
+        <FormEducation info={info} handleChange={handleChange} />
+        <FormExperience info={info} handleChange={handleChange} />
       </div>
     );
   }

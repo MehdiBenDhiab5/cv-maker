@@ -8,7 +8,6 @@ class FormAbout extends React.Component {
   render() {
     let info = this.props.info;
     let handleChange = this.props.handleChange;
-    console.log(info);
     return (
       <div>
         <label>
