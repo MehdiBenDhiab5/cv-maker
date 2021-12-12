@@ -1,7 +1,7 @@
 import React from 'react';
-import About from './About';
-import Education from './Education';
-import Experience from './Experience';
+import About from './cv/About';
+import Education from './cv/Education';
+import Experience from './cv/Experience';
 
 class Cv extends React.Component {
   constructor(props) {
@@ -10,12 +10,12 @@ class Cv extends React.Component {
     this.state = {
       editMode: false,
       aboutInfo: {
-        name: '',
-        title: '',
+        name: 'a',
+        title: 'b',
         contact: {
-          phone: '',
-          email: '',
-          location: '',
+          phone: 'c',
+          email: 'd',
+          location: 'e',
         },
       },
       educationInfo: [],
