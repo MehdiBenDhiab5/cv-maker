@@ -38,9 +38,18 @@ class Cv extends React.Component {
   render() {
     return (
       <div>
-        <About />
-        <Education />
-        <Experience />
+        <About
+          info={this.state.aboutInfo}
+          handleChange={this.handleInputChange}
+        />
+        <Education
+          info={this.state.educationInfo}
+          handleChange={this.handleInputChange}
+        />
+        <Experience
+          info={this.state.experienceInfo}
+          handleChange={this.handleInputChange}
+        />
       </div>
     );
   }
