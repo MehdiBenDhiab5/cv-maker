@@ -41,14 +41,17 @@ class Cv extends React.Component {
         <About
           info={this.state.aboutInfo}
           handleChange={this.handleInputChange}
+          edit={this.state.editMode}
         />
         <Education
           info={this.state.educationInfo}
           handleChange={this.handleInputChange}
+          edit={this.state.editMode}
         />
         <Experience
           info={this.state.experienceInfo}
           handleChange={this.handleInputChange}
+          edit={this.state.editMode}
         />
       </div>
     );

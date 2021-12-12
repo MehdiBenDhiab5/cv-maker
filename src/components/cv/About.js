@@ -8,14 +8,11 @@ class About extends React.Component {
 
   render() {
     let info = this.props.info;
+    let edit = this.props.edit;
+
     console.log(info);
 
-    return (
-      <div>
-        <DisplayAbout info={info} />
-        {/* <formAbout /> */}
-      </div>
-    );
+    return <div>{edit ? '<formAbout />' : <DisplayAbout info={info} />}</div>;
   }
 }
 
