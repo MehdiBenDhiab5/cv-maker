@@ -1,5 +1,6 @@
 import React from 'react';
 import DisplayAbout from './about/displayAbout';
+import FormAbout from './about/FormAbout';
 
 class About extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class About extends React.Component {
 
     console.log(info);
 
-    return <div>{edit ? '<formAbout />' : <DisplayAbout info={info} />}</div>;
+    return <div>{edit ? <FormAbout /> : <DisplayAbout info={info} />}</div>;
   }
 }
 

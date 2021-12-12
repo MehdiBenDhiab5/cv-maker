@@ -38,21 +38,23 @@ class Cv extends React.Component {
   render() {
     return (
       <div>
-        <About
-          info={this.state.aboutInfo}
-          handleChange={this.handleInputChange}
-          edit={this.state.editMode}
-        />
-        <Education
-          info={this.state.educationInfo}
-          handleChange={this.handleInputChange}
-          edit={this.state.editMode}
-        />
-        <Experience
-          info={this.state.experienceInfo}
-          handleChange={this.handleInputChange}
-          edit={this.state.editMode}
-        />
+        <form>
+          <About
+            info={this.state.aboutInfo}
+            handleChange={this.handleInputChange}
+            edit={this.state.editMode}
+          />
+          <Education
+            info={this.state.educationInfo}
+            handleChange={this.handleInputChange}
+            edit={this.state.editMode}
+          />
+          <Experience
+            info={this.state.experienceInfo}
+            handleChange={this.handleInputChange}
+            edit={this.state.editMode}
+          />
+        </form>
       </div>
     );
   }
