@@ -95,8 +95,12 @@ class App extends React.Component {
   }
   modifyEdu(id) {
     this.setState((prevState) => {
+      //get index of element to change
       let ind = prevState.educationInfo.findIndex((elem) => elem.id == id);
+      //create another array to later insert into state
       let newArr = prevState.educationInfo;
+      //change the value in the new array
+      //need to change title:"ba9lewa" to [name]:value
       newArr[ind] = { ...newArr[ind], title: 'ba9lewa' };
       return { educationInfo: newArr };
     });
