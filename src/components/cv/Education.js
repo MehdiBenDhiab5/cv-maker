@@ -7,7 +7,6 @@ class Education extends React.Component {
 
   render() {
     let info = this.props.info;
-    console.log(info);
     return (
       <div>
         <h2>Education:</h2>

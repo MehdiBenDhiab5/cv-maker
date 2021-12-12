@@ -58,6 +58,8 @@ class App extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.addEdu = this.addEdu.bind(this);
+    this.modifyEdu = this.modifyEdu.bind(this);
   }
 
   handleInputChange(event) {
@@ -91,10 +93,34 @@ class App extends React.Component {
       }
     );
   }
+  modifyEdu(id) {
+    this.setState((prevState) => {
+      let ind = prevState.educationInfo.findIndex((elem) => elem.id == id);
+      let newArr = prevState.educationInfo;
+      newArr[ind] = { ...newArr[ind], title: 'ba9lewa' };
+      return { educationInfo: newArr };
+    });
+  }
+  addEdu() {
+    this.setState((prevState) => {
+      let newEdu = {
+        id: uniqid(),
+        title: 'title',
+        university: 'university',
+        date: 'date',
+      };
+      let newArr = prevState.educationInfo.concat(newEdu);
+      return {
+        educationInfo: newArr,
+      };
+    });
+  }
 
   render() {
     return (
       <div>
+        <button onClick={this.addEdu}>addEdu</button>
+        <button onClick={this.modifyEdu}>modifyEdu</button>
         <Edit info={this.state} handleChange={this.handleInputChange} />
         <Cv info={this.state} />
       </div>
