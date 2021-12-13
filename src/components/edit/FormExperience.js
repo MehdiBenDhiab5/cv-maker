@@ -49,7 +49,7 @@ class FormExperience extends React.Component {
           name="description"
           value={exp.description}
           onChange={this.callOnChangeWithKey}
-          placeholder="description"
+          placeholder="Description"
         ></textarea>
       </div>
     );
