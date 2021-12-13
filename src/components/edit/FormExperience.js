@@ -25,7 +25,7 @@ class FormExperience extends React.Component {
             name="title"
             value={exp.title}
             onChange={this.callOnChangeWithKey}
-            placeholder="Degree"
+            placeholder="Title"
             className="title-nearRemove"
           ></input>
           <button onClick={this.callDeleteWithKey}>Remove</button>

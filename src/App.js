@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Cv from './components/Cv';
 import Edit from './components/Edit';
 import uniqid from 'uniqid';
 import './styles.css';
+import ReactToPrint from 'react-to-print';
 
 class App extends React.Component {
   constructor(props) {
@@ -172,10 +173,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-page">
-        {/* <div className="buttons">
-          <button onClick={this.addEdu}>addEdu</button>
-          <button onClick={this.modifyEdu}>modifyEdu</button>
-        </div> */}
+        <div className="header">
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <a className="print" href="#">
+                  Print / Download PDF !
+                </a>
+              );
+            }}
+            content={() => this.componentRef}
+          />
+        </div>
         <div className="main-content">
           <Edit
             info={this.state}
@@ -187,7 +196,7 @@ class App extends React.Component {
             removeEdu={this.removeEdu}
             removeExp={this.removeExp}
           />
-          <Cv info={this.state} />
+          <Cv info={this.state} ref={(el) => (this.componentRef = el)} />
         </div>
       </div>
     );
