@@ -61,7 +61,7 @@ class App extends React.Component {
     this.addEdu = this.addEdu.bind(this);
     this.modifyEdu = this.modifyEdu.bind(this);
   }
-
+  //about form
   handleInputChange(event) {
     const target = event.target;
     const name = target.name;
@@ -93,7 +93,7 @@ class App extends React.Component {
       }
     );
   }
-  modifyEdu(id) {
+  modifyEdu(id, name, value) {
     this.setState((prevState) => {
       //get index of element to change
       let ind = prevState.educationInfo.findIndex((elem) => elem.id == id);
@@ -101,7 +101,7 @@ class App extends React.Component {
       let newArr = prevState.educationInfo;
       //change the value in the new array
       //need to change title:"ba9lewa" to [name]:value
-      newArr[ind] = { ...newArr[ind], title: 'ba9lewa' };
+      newArr[ind] = { ...newArr[ind], [name]: value };
       return { educationInfo: newArr };
     });
   }
@@ -125,7 +125,11 @@ class App extends React.Component {
       <div>
         <button onClick={this.addEdu}>addEdu</button>
         <button onClick={this.modifyEdu}>modifyEdu</button>
-        <Edit info={this.state} handleChange={this.handleInputChange} />
+        <Edit
+          info={this.state}
+          handleChange={this.handleInputChange}
+          modifyEdu={this.modifyEdu}
+        />
         <Cv info={this.state} />
       </div>
     );

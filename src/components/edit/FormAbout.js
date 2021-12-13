@@ -10,6 +10,7 @@ class FormAbout extends React.Component {
     let handleChange = this.props.handleChange;
     return (
       <div>
+        <h1>About Form</h1>
         <label>
           Name
           <input
