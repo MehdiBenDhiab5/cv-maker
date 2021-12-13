@@ -20,18 +20,21 @@ class FormEducation extends React.Component {
           name="title"
           value={edu.title}
           onChange={this.callOnChangeWithKey}
+          placeholder="Degree"
         ></input>
 
         <input
           name="university"
           value={edu.university}
           onChange={this.callOnChangeWithKey}
+          placeholder="University"
         ></input>
 
         <input
           name="date"
           value={edu.date}
           onChange={this.callOnChangeWithKey}
+          placeholder="Date"
         ></input>
       </div>
     );

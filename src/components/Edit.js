@@ -12,6 +12,7 @@ class Edit extends React.Component {
     let info = this.props.info;
     let handleChange = this.props.handleChange;
     let modifyEdu = this.props.modifyEdu;
+    let modifyExp = this.props.modifyExp;
     return (
       <div className="page">
         <h2>About</h2>
@@ -27,11 +28,7 @@ class Edit extends React.Component {
         <h2>Experience</h2>
         {info.experienceInfo.map((elem) => {
           return (
-            <FormExperience
-              key={elem.id}
-              exp={elem}
-              handleChange={handleChange}
-            />
+            <FormExperience key={elem.id} exp={elem} handleChange={modifyExp} />
           );
         })}
       </div>

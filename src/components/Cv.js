@@ -11,7 +11,7 @@ class Cv extends React.Component {
   render() {
     let info = this.props.info;
     return (
-      <div className="page">
+      <div className="page2">
         <About info={info.aboutInfo} />
         <Education info={info.educationInfo} />
         <Experience info={info.experienceInfo} />

@@ -8,12 +8,16 @@ class About extends React.Component {
   render() {
     let info = this.props.info;
     return (
-      <div>
-        <div>{info.name}</div>
-        <div>{info.title}</div>
-        <div>{info.contact.phone}</div>
-        <div>{info.contact.email}</div>
-        <div>{info.contact.location}</div>
+      <div className="about-container">
+        <div className="name-title-container">
+          <div className="contact-name">{info.name}</div>
+          <div className="contact-title">{info.title}</div>
+        </div>
+        <div className="contact-container">
+          <div className="contact-info">{info.contact.phone}</div>
+          <div className="contact-info">{info.contact.email}</div>
+          <div className="contact-info">{info.contact.location}</div>
+        </div>
       </div>
     );
   }

@@ -10,49 +10,51 @@ class App extends React.Component {
 
     this.state = {
       aboutInfo: {
-        name: 'el bor3i',
-        title: 'b',
+        name: 'Mehdi Bsas',
+        title: 'Software Engineer',
         contact: {
-          phone: 'c',
-          email: 'd',
-          location: 'e',
+          phone: '55 222 333',
+          email: 'mehdibsas@gmail.com',
+          location: 'Tunis, Tunisia',
         },
       },
       educationInfo: [
         {
           id: uniqid(),
-          title: 'title1',
-          university: 'university1',
-          date: 'date1',
+          title: 'CS50: Introduction to Computer Science',
+          university: 'Harvard University',
+          date: '2020 – Present',
         },
         {
           id: uniqid(),
-          title: 'title2',
-          university: 'university2',
-          date: 'date2',
+          title: 'Fullstack JavaScript',
+          university: 'The Odin Project',
+          date: '2019 – Present',
         },
       ],
       experienceInfo: [
         {
           id: uniqid(),
-          title: 'title1',
-          company: 'company1',
-          date: 'date1',
-          description: 'description1',
+          title: 'Software Engineer',
+          company: 'A Software Company',
+          date: '2018 – Present',
+          description:
+            'Irure dolor incididunt sint et ullamco. Commodo laboris amet aliquip incididunt do ut est exercitation reprehenderit magna sit laboris est mollit.',
         },
         {
           id: uniqid(),
-          title: 'title2',
-          company: 'company2',
-          date: 'date2',
-          description: 'description2',
+          title: 'Graduate Engineer',
+          company: 'A Software Company',
+          date: '2017 – 2018',
+          description:
+            'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
         },
         {
           id: uniqid(),
-          title: 'title3',
-          company: 'company3',
-          date: 'date3',
-          description: 'description3',
+          title: 'Tutor',
+          company: 'A Software Company',
+          date: '2015 – 2017',
+          description: 'Enim elit aliquip fugiat anim proident.',
         },
       ],
     };
@@ -60,6 +62,7 @@ class App extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addEdu = this.addEdu.bind(this);
     this.modifyEdu = this.modifyEdu.bind(this);
+    this.modifyExp = this.modifyExp.bind(this);
   }
   //about form
   handleInputChange(event) {
@@ -100,9 +103,19 @@ class App extends React.Component {
       //create another array to later insert into state
       let newArr = prevState.educationInfo;
       //change the value in the new array
-      //need to change title:"ba9lewa" to [name]:value
       newArr[ind] = { ...newArr[ind], [name]: value };
       return { educationInfo: newArr };
+    });
+  }
+  modifyExp(id, name, value) {
+    this.setState((prevState) => {
+      //get index of element to change
+      let ind = prevState.experienceInfo.findIndex((elem) => elem.id == id);
+      //create another array to later insert into state
+      let newArr = prevState.experienceInfo;
+      //change the value in the new array
+      newArr[ind] = { ...newArr[ind], [name]: value };
+      return { experienceInfo: newArr };
     });
   }
   addEdu() {
@@ -123,15 +136,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-page">
-        <div className="buttons">
+        {/* <div className="buttons">
           <button onClick={this.addEdu}>addEdu</button>
           <button onClick={this.modifyEdu}>modifyEdu</button>
-        </div>
+        </div> */}
         <div className="main-content">
           <Edit
             info={this.state}
             handleChange={this.handleInputChange}
             modifyEdu={this.modifyEdu}
+            modifyExp={this.modifyExp}
           />
           <Cv info={this.state} />
         </div>
