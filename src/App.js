@@ -14,22 +14,22 @@ class App extends React.Component {
         name: 'Mehdi Bsas',
         title: 'Software Engineer',
         contact: {
-          phone: '55 222 333',
-          email: 'mehdibsas@gmail.com',
+          phone: '+216 55 555 555',
+          email: 'myemail@gmail.com',
           location: 'Tunis, Tunisia',
         },
       },
       educationInfo: [
         {
           id: uniqid(),
-          title: 'CS50: Introduction to Computer Science',
-          university: 'Harvard University',
+          title: 'Masters in Software Engineering',
+          university: 'University Name',
           date: '2020 – Present',
         },
         {
           id: uniqid(),
-          title: 'Fullstack JavaScript',
-          university: 'The Odin Project',
+          title: 'Bachelors in Computer Science',
+          university: 'University Name',
           date: '2019 – Present',
         },
       ],
@@ -37,15 +37,15 @@ class App extends React.Component {
         {
           id: uniqid(),
           title: 'Software Engineer',
-          company: 'A Software Company',
+          company: 'Company Name',
           date: '2018 – Present',
           description:
-            'Irure dolor incididunt sint et ullamco. Commodo laboris amet aliquip incididunt do ut est exercitation reprehenderit magna sit laboris est mollit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci sit amet nunc faucibus lobortis. Maecenas quis ultricies massa, id suscipit urna. Nam maximus risus a eros condimentum, vitae maximus libero eleifend.',
         },
         {
           id: uniqid(),
           title: 'Graduate Engineer',
-          company: 'A Software Company',
+          company: 'Company Name',
           date: '2017 – 2018',
           description:
             'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
@@ -53,9 +53,10 @@ class App extends React.Component {
         {
           id: uniqid(),
           title: 'Tutor',
-          company: 'A Software Company',
+          company: 'Company Name',
           date: '2015 – 2017',
-          description: 'Enim elit aliquip fugiat anim proident.',
+          description:
+            'Sed fermentum nisi est, in lobortis libero feugiat nec. Duis mattis nunc a mi lacinia malesuada. Nullam ac risus non leo finibus vestibulum eget nec justo. Pellentesque egestas a enim vel lacinia.',
         },
       ],
     };
