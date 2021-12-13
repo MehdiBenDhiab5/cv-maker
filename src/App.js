@@ -109,9 +109,9 @@ class App extends React.Component {
     this.setState((prevState) => {
       let newEdu = {
         id: uniqid(),
-        title: 'title',
-        university: 'university',
-        date: 'date',
+        title: '',
+        university: '',
+        date: '',
       };
       let newArr = prevState.educationInfo.concat(newEdu);
       return {
@@ -122,15 +122,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.addEdu}>addEdu</button>
-        <button onClick={this.modifyEdu}>modifyEdu</button>
-        <Edit
-          info={this.state}
-          handleChange={this.handleInputChange}
-          modifyEdu={this.modifyEdu}
-        />
-        <Cv info={this.state} />
+      <div className="main-page">
+        <div className="buttons">
+          <button onClick={this.addEdu}>addEdu</button>
+          <button onClick={this.modifyEdu}>modifyEdu</button>
+        </div>
+        <div className="main-content">
+          <Edit
+            info={this.state}
+            handleChange={this.handleInputChange}
+            modifyEdu={this.modifyEdu}
+          />
+          <Cv info={this.state} />
+        </div>
       </div>
     );
   }

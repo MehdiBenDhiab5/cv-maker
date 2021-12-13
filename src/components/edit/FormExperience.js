@@ -8,11 +8,7 @@ class FormExperience extends React.Component {
   render() {
     let info = this.props.info;
     let handleChange = this.props.handleChange;
-    return (
-      <div>
-        <h1>Experience Form</h1>
-      </div>
-    );
+    return <div></div>;
   }
 }
 

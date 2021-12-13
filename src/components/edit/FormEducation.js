@@ -15,32 +15,24 @@ class FormEducation extends React.Component {
     let edu = this.props.edu;
     let handleChange = this.props.handleChange;
     return (
-      <div>
-        <h1>Edu Form</h1>
-        <label>
-          Title
-          <input
-            name="title"
-            value={edu.title}
-            onChange={this.callOnChangeWithKey}
-          ></input>
-        </label>
-        <label>
-          University
-          <input
-            name="university"
-            value={edu.university}
-            onChange={this.callOnChangeWithKey}
-          ></input>
-        </label>
-        <label>
-          Date
-          <input
-            name="date"
-            value={edu.date}
-            onChange={this.callOnChangeWithKey}
-          ></input>
-        </label>
+      <div className="form-container">
+        <input
+          name="title"
+          value={edu.title}
+          onChange={this.callOnChangeWithKey}
+        ></input>
+
+        <input
+          name="university"
+          value={edu.university}
+          onChange={this.callOnChangeWithKey}
+        ></input>
+
+        <input
+          name="date"
+          value={edu.date}
+          onChange={this.callOnChangeWithKey}
+        ></input>
       </div>
     );
   }

@@ -13,15 +13,18 @@ class Edit extends React.Component {
     let handleChange = this.props.handleChange;
     let modifyEdu = this.props.modifyEdu;
     return (
-      <div>
+      <div className="page">
+        <h2>About</h2>
         <FormAbout info={info} handleChange={handleChange} />
 
+        <h2>Education</h2>
         {info.educationInfo.map((elem) => {
           return (
             <FormEducation key={elem.id} edu={elem} handleChange={modifyEdu} />
           );
         })}
 
+        <h2>Experience</h2>
         {info.experienceInfo.map((elem) => {
           return (
             <FormExperience

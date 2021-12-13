@@ -9,7 +9,7 @@ class About extends React.Component {
     let info = this.props.info;
     return (
       <div>
-        <h1>{info.name}</h1>
+        <div>{info.name}</div>
         <div>{info.title}</div>
         <div>{info.contact.phone}</div>
         <div>{info.contact.email}</div>
