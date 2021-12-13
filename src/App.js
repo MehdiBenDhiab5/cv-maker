@@ -61,8 +61,11 @@ class App extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addEdu = this.addEdu.bind(this);
+    this.addExp = this.addExp.bind(this);
     this.modifyEdu = this.modifyEdu.bind(this);
     this.modifyExp = this.modifyExp.bind(this);
+    this.removeExp = this.removeExp.bind(this);
+    this.removeEdu = this.removeEdu.bind(this);
   }
   //about form
   handleInputChange(event) {
@@ -126,9 +129,42 @@ class App extends React.Component {
         university: '',
         date: '',
       };
-      let newArr = prevState.educationInfo.concat(newEdu);
+      let newArr = [newEdu].concat(prevState.educationInfo);
       return {
         educationInfo: newArr,
+      };
+    });
+  }
+  addExp() {
+    this.setState((prevState) => {
+      let newExp = {
+        id: uniqid(),
+        title: '',
+        company: '',
+        date: '',
+        description: '',
+      };
+      let newArr = [newExp].concat(prevState.experienceInfo);
+      return {
+        experienceInfo: newArr,
+      };
+    });
+  }
+  removeExp(id) {
+    this.setState((prevState) => {
+      return {
+        experienceInfo: prevState.experienceInfo.filter(
+          (elem, i) => elem.id != id
+        ),
+      };
+    });
+  }
+  removeEdu(id) {
+    this.setState((prevState) => {
+      return {
+        educationInfo: prevState.educationInfo.filter(
+          (elem, i) => elem.id != id
+        ),
       };
     });
   }
@@ -146,6 +182,10 @@ class App extends React.Component {
             handleChange={this.handleInputChange}
             modifyEdu={this.modifyEdu}
             modifyExp={this.modifyExp}
+            addEdu={this.addEdu}
+            addExp={this.addExp}
+            removeEdu={this.removeEdu}
+            removeExp={this.removeExp}
           />
           <Cv info={this.state} />
         </div>

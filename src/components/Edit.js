@@ -13,22 +13,41 @@ class Edit extends React.Component {
     let handleChange = this.props.handleChange;
     let modifyEdu = this.props.modifyEdu;
     let modifyExp = this.props.modifyExp;
+    let addExp = this.props.addExp;
+    let addEdu = this.props.addEdu;
     return (
       <div className="page">
         <h2>About</h2>
         <FormAbout info={info} handleChange={handleChange} />
 
-        <h2>Education</h2>
+        <div className="form-title-container">
+          <h2>Education</h2>
+          <button onClick={addEdu}>Add</button>
+        </div>
         {info.educationInfo.map((elem) => {
           return (
-            <FormEducation key={elem.id} edu={elem} handleChange={modifyEdu} />
+            <FormEducation
+              key={elem.id}
+              edu={elem}
+              handleChange={modifyEdu}
+              removeEdu={this.props.removeEdu}
+            />
           );
         })}
 
-        <h2>Experience</h2>
+        <div className="form-title-container">
+          <h2>Experience</h2>
+          <button onClick={addExp}>Add</button>
+        </div>
+
         {info.experienceInfo.map((elem) => {
           return (
-            <FormExperience key={elem.id} exp={elem} handleChange={modifyExp} />
+            <FormExperience
+              key={elem.id}
+              exp={elem}
+              handleChange={modifyExp}
+              removeExp={this.props.removeExp}
+            />
           );
         })}
       </div>

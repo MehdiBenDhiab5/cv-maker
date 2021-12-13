@@ -126,3 +126,15 @@ textarea {
 h2 {
   color: #275c70;
 }
+.form-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+.remove-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.title-nearRemove {
+  flex: 1;
+}

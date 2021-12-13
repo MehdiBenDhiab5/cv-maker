@@ -5,10 +5,14 @@ class FormEducation extends React.Component {
     super(props);
 
     this.callOnChangeWithKey = this.callOnChangeWithKey.bind(this);
+    this.callDeleteWithKey = this.callDeleteWithKey.bind(this);
   }
 
   callOnChangeWithKey(e) {
     this.props.handleChange(this.props.edu.id, e.target.name, e.target.value);
+  }
+  callDeleteWithKey() {
+    this.props.removeEdu(this.props.edu.id);
   }
 
   render() {
@@ -16,13 +20,16 @@ class FormEducation extends React.Component {
     let handleChange = this.props.handleChange;
     return (
       <div className="form-container">
-        <input
-          name="title"
-          value={edu.title}
-          onChange={this.callOnChangeWithKey}
-          placeholder="Degree"
-        ></input>
-
+        <div className="remove-container">
+          <input
+            name="title"
+            value={edu.title}
+            onChange={this.callOnChangeWithKey}
+            placeholder="Degree"
+            className="title-nearRemove"
+          ></input>
+          <button onClick={this.callDeleteWithKey}>Remove</button>
+        </div>
         <input
           name="university"
           value={edu.university}
