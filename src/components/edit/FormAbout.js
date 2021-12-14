@@ -10,6 +10,8 @@ class FormAbout extends React.Component {
     let handleChange = this.props.handleChange;
     return (
       <div className="form-container">
+        <h3>Profile picture</h3>
+        <input type="file" name="myImage" onChange={this.props.onImageChange} />
         <input
           name="name"
           value={info.aboutInfo.name}
@@ -34,7 +36,6 @@ class FormAbout extends React.Component {
           onChange={handleChange}
           placeholder="Email"
         ></input>
-
         <input
           name="location"
           value={info.aboutInfo.contact.location}

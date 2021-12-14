@@ -15,10 +15,15 @@ class Edit extends React.Component {
     let modifyExp = this.props.modifyExp;
     let addExp = this.props.addExp;
     let addEdu = this.props.addEdu;
+    let onImageChange = this.props.onImageChange;
     return (
       <div className="page">
         <h2>About</h2>
-        <FormAbout info={info} handleChange={handleChange} />
+        <FormAbout
+          info={info}
+          handleChange={handleChange}
+          onImageChange={onImageChange}
+        />
 
         <div className="form-title-container">
           <h2>Education</h2>

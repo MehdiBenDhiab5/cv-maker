@@ -12,7 +12,7 @@ class Cv extends React.Component {
     let info = this.props.info;
     return (
       <div className="page2">
-        <About info={info.aboutInfo} />
+        <About info={info.aboutInfo} profileImage={info.image} />
         <Education info={info.educationInfo} />
         <Experience info={info.experienceInfo} />
       </div>

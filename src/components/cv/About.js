@@ -9,6 +9,13 @@ class About extends React.Component {
     let info = this.props.info;
     return (
       <div className="about-container">
+        {this.props.profileImage ? (
+          <img
+            src={this.props.profileImage}
+            alt="profile_picture"
+            className="profile-image"
+          />
+        ) : null}
         <div className="name-title-container">
           <div className="contact-name">{info.name}</div>
           <div className="contact-title">{info.title}</div>

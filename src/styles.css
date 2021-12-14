@@ -68,6 +68,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 .name-title-container {
   flex: 1;
@@ -151,4 +152,10 @@ h2 {
   color: red;
   font-size: larger;
   font-weight: bold;
+}
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-right: 30px;
 }

@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      image: null,
       aboutInfo: {
         name: 'Mehdi Bsas',
         title: 'Software Engineer',
@@ -68,6 +69,7 @@ class App extends React.Component {
     this.modifyExp = this.modifyExp.bind(this);
     this.removeExp = this.removeExp.bind(this);
     this.removeEdu = this.removeEdu.bind(this);
+    this.onImageChange = this.onImageChange.bind(this);
   }
   //about form
   handleInputChange(event) {
@@ -170,6 +172,14 @@ class App extends React.Component {
       };
     });
   }
+  onImageChange(event) {
+    if (event.target.files && event.target.files[0]) {
+      let img = event.target.files[0];
+      this.setState({
+        image: URL.createObjectURL(img),
+      });
+    }
+  }
 
   render() {
     return (
@@ -196,6 +206,7 @@ class App extends React.Component {
             addExp={this.addExp}
             removeEdu={this.removeEdu}
             removeExp={this.removeExp}
+            onImageChange={this.onImageChange}
           />
           <Cv info={this.state} ref={(el) => (this.componentRef = el)} />
         </div>
