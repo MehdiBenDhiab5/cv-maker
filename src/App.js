@@ -129,11 +129,12 @@ function App() {
       setImage(URL.createObjectURL(img));
     }
   }
+  const componentRef = useRef();
 
   return (
     <div className="main-page">
-      {/* <div className="header">
-        <ReactToPrint
+      <div className="header">
+        {/* <ReactToPrint
           trigger={() => {
             return (
               <a className="print" href="#">
@@ -142,8 +143,16 @@ function App() {
             );
           }}
           content={() => componentRef}
+        /> */}
+        <ReactToPrint
+          trigger={() => (
+            <a className="print" href="#">
+              Print / Export PDF
+            </a>
+          )}
+          content={() => componentRef.current}
         />
-      </div> */}
+      </div>
       <div className="main-content">
         <Edit
           info={info}
@@ -158,6 +167,7 @@ function App() {
         />
         <Cv
           info={info}
+          ref={componentRef}
           // ref={(el) => (componentRef = el)}
         />
       </div>
